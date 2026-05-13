@@ -76,7 +76,7 @@ const PENDING_ORDERS = [
 ];
 
 export default function ProcurementCopilot() {
-  const [activeTab, setActiveTab] = useState<'entry' | 'database' | 'forecast' | 'behavior'>('entry');
+  const [activeTab, setActiveTab] = useState<'entry' | 'database' | 'forecast' | 'behavior' | 'profit'>('entry');
   
   // UI Filters
   const [monthsFilter, setMonthsFilter] = useState<number>(3);

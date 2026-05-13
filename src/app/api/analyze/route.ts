@@ -4,8 +4,10 @@ import { NextResponse } from 'next/server';
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
 export async function POST(req: Request) {
+  let reqBody: any = {};
   try {
-    const { poNumber, staffName, department, itemRequested, orderQty, vendor, pastSalesData, currentStockData } = await req.json();
+    reqBody = await req.json();
+    const { poNumber, staffName, department, itemRequested, orderQty, vendor, pastSalesData, currentStockData } = reqBody;
 
     const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
@@ -63,7 +65,7 @@ export async function POST(req: Request) {
     // --- ENTERPRISE FAULT TOLERANCE ---
     // If Google's servers crash during your live presentation (503 Error), we immediately switch to a simulated offline fallback response!
     if (error.message && (error.message.includes('503') || error.message.includes('high demand'))) {
-         const mockFallback = `ALERT||REDUCE\\nREQUESTED||${orderQty}\\nOPTIMAL||150\\nREASONING||[API 503 OFFLINE FALLBACK]: Mathematical limit reached. Avoid 7-day milk spoilage.`;
+         const mockFallback = `ALERT||REDUCE\\nREQUESTED||${reqBody?.orderQty || 'Unknown'}\\nOPTIMAL||150\\nREASONING||[API 503 OFFLINE FALLBACK]: Mathematical limit reached. Avoid 7-day milk spoilage.`;
          return NextResponse.json({ result: mockFallback });
     }
 
