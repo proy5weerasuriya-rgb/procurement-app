@@ -1,0 +1,21 @@
+Item Group,Item Name,Current Stock,UOM,Shelf Life Days
+Raw Dairy,Organic Raw Milk,300,Liters,7
+Raw Dairy,Standard Cow Milk,1500,Liters,7
+Raw Dairy,Heavy Cream,200,Liters,10
+Raw Dairy,Goat Milk,150,Liters,5
+Sweeteners,Refined Sugar,1200,kg,365
+Sweeteners,Liquid Honey,80,Liters,365
+Sweeteners,Corn Syrup,400,Liters,365
+Flavorings,Whole Strawberries,50,kg,5
+Flavorings,Vanilla Bean Pods,15,kg,180
+Flavorings,Cocoa Powder,300,kg,730
+Flavorings,Mango Puree,90,Liters,14
+Flavorings,Blueberry Extract,20,Liters,30
+Cultures,Yogurt Bacteria Blend,5,kg,30
+Cultures,Cheese Rennet,10,Liters,120
+Packaging,1L Plastic Bottles,5000,Pieces,999
+Packaging,500ml Glass Jars,2000,Pieces,999
+Packaging,Cardboard Cartons,8000,Pieces,999
+Packaging,Bottle Caps,15000,Pieces,999
+Sanitation,Bleach Sanitizer,250,Liters,730
+Sanitation,Floor Cleaner,100,Liters,730

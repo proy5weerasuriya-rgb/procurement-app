@@ -1,0 +1,157 @@
+Date,Item,Quantity,UnitPrice,UnitCost
+2025-05-01,Organic Raw Milk,110,2.50,1.20
+2025-06-01,Organic Raw Milk,115,2.50,1.20
+2025-07-01,Organic Raw Milk,105,2.50,1.20
+2025-08-01,Organic Raw Milk,100,2.50,1.20
+2025-09-01,Organic Raw Milk,120,2.50,1.20
+2025-10-01,Organic Raw Milk,150,2.50,1.20
+2025-11-01,Organic Raw Milk,180,2.50,1.20
+2025-12-01,Organic Raw Milk,250,2.50,1.20
+2026-01-05,Organic Raw Milk,100,2.50,1.20
+2026-02-05,Organic Raw Milk,200,2.50,1.20
+2026-03-05,Organic Raw Milk,300,2.50,1.20
+2026-04-05,Organic Raw Milk,500,2.50,1.20
+2025-05-01,Standard Cow Milk,400,1.80,0.90
+2025-06-01,Standard Cow Milk,410,1.80,0.90
+2025-07-01,Standard Cow Milk,390,1.80,0.90
+2025-08-01,Standard Cow Milk,395,1.80,0.90
+2025-09-01,Standard Cow Milk,420,1.80,0.90
+2025-10-01,Standard Cow Milk,430,1.80,0.90
+2025-11-01,Standard Cow Milk,450,1.80,0.90
+2025-12-01,Standard Cow Milk,500,1.80,0.90
+2026-01-10,Standard Cow Milk,400,1.80,0.90
+2026-02-10,Standard Cow Milk,410,1.80,0.90
+2026-03-10,Standard Cow Milk,395,1.80,0.90
+2026-04-10,Standard Cow Milk,405,1.80,0.90
+2025-05-01,Heavy Cream,90,4.50,2.10
+2025-06-01,Heavy Cream,100,4.50,2.10
+2025-07-01,Heavy Cream,95,4.50,2.10
+2025-08-01,Heavy Cream,90,4.50,2.10
+2025-09-01,Heavy Cream,105,4.50,2.10
+2025-10-01,Heavy Cream,120,4.50,2.10
+2025-11-01,Heavy Cream,150,4.50,2.10
+2025-12-01,Heavy Cream,220,4.50,2.10
+2026-01-12,Heavy Cream,80,4.50,2.10
+2026-02-12,Heavy Cream,85,4.50,2.10
+2026-03-12,Heavy Cream,90,4.50,2.10
+2026-04-12,Heavy Cream,110,4.50,2.10
+2025-05-01,Goat Milk,55,5.20,2.50
+2025-06-01,Goat Milk,60,5.20,2.50
+2025-07-01,Goat Milk,58,5.20,2.50
+2025-08-01,Goat Milk,55,5.20,2.50
+2025-09-01,Goat Milk,52,5.20,2.50
+2025-10-01,Goat Milk,50,5.20,2.50
+2025-11-01,Goat Milk,65,5.20,2.50
+2025-12-01,Goat Milk,80,5.20,2.50
+2026-01-05,Goat Milk,50,5.20,2.50
+2026-02-05,Goat Milk,60,5.20,2.50
+2026-03-05,Goat Milk,45,5.20,2.50
+2026-04-05,Goat Milk,55,5.20,2.50
+2025-05-01,Refined Sugar,260,1.10,0.55
+2025-06-01,Refined Sugar,275,1.10,0.55
+2025-07-01,Refined Sugar,290,1.10,0.55
+2025-08-01,Refined Sugar,300,1.10,0.55
+2025-09-01,Refined Sugar,280,1.10,0.55
+2025-10-01,Refined Sugar,260,1.10,0.55
+2025-11-01,Refined Sugar,280,1.10,0.55
+2025-12-01,Refined Sugar,350,1.10,0.55
+2026-01-01,Refined Sugar,250,1.10,0.55
+2026-02-01,Refined Sugar,245,1.10,0.55
+2026-03-01,Refined Sugar,255,1.10,0.55
+2026-04-01,Refined Sugar,250,1.10,0.55
+2025-05-01,Liquid Honey,135,8.50,4.00
+2025-06-01,Liquid Honey,150,8.50,4.00
+2025-07-01,Liquid Honey,160,8.50,4.00
+2025-08-01,Liquid Honey,155,8.50,4.00
+2025-09-01,Liquid Honey,140,8.50,4.00
+2025-10-01,Liquid Honey,130,8.50,4.00
+2025-11-01,Liquid Honey,120,8.50,4.00
+2025-12-01,Liquid Honey,160,8.50,4.00
+2026-01-01,Liquid Honey,120,8.50,4.00
+2026-02-01,Liquid Honey,130,8.50,4.00
+2026-03-01,Liquid Honey,125,8.50,4.00
+2026-04-01,Liquid Honey,140,8.50,4.00
+2025-05-01,Corn Syrup,220,0.95,0.40
+2025-06-01,Corn Syrup,230,0.95,0.40
+2025-07-01,Corn Syrup,240,0.95,0.40
+2025-08-01,Corn Syrup,210,0.95,0.40
+2025-09-01,Corn Syrup,190,0.95,0.40
+2025-10-01,Corn Syrup,180,0.95,0.40
+2025-11-01,Corn Syrup,200,0.95,0.40
+2025-12-01,Corn Syrup,250,0.95,0.40
+2026-01-01,Corn Syrup,300,0.95,0.40
+2026-02-01,Corn Syrup,250,0.95,0.40
+2026-03-01,Corn Syrup,200,0.95,0.40
+2026-04-01,Corn Syrup,150,0.95,0.40
+2025-05-01,Whole Strawberries,500,6.50,3.00
+2025-06-01,Whole Strawberries,750,6.50,3.00
+2025-07-01,Whole Strawberries,800,6.50,3.00
+2025-08-01,Whole Strawberries,650,6.50,3.00
+2025-09-01,Whole Strawberries,300,6.50,3.00
+2025-10-01,Whole Strawberries,100,6.50,3.00
+2025-11-01,Whole Strawberries,40,6.50,3.00
+2025-12-01,Whole Strawberries,30,6.50,3.00
+2026-01-01,Whole Strawberries,50,6.50,3.00
+2026-02-01,Whole Strawberries,150,6.50,3.00
+2026-03-01,Whole Strawberries,400,6.50,3.00
+2026-04-01,Whole Strawberries,650,6.50,3.00
+2025-05-01,Vanilla Bean Pods,25,150.00,75.00
+2025-06-01,Vanilla Bean Pods,28,150.00,75.00
+2025-07-01,Vanilla Bean Pods,30,150.00,75.00
+2025-08-01,Vanilla Bean Pods,27,150.00,75.00
+2025-09-01,Vanilla Bean Pods,22,150.00,75.00
+2025-10-01,Vanilla Bean Pods,20,150.00,75.00
+2025-11-01,Vanilla Bean Pods,23,150.00,75.00
+2025-12-01,Vanilla Bean Pods,30,150.00,75.00
+2026-01-01,Vanilla Bean Pods,20,150.00,75.00
+2026-02-01,Vanilla Bean Pods,22,150.00,75.00
+2026-03-01,Vanilla Bean Pods,21,150.00,75.00
+2026-04-01,Vanilla Bean Pods,23,150.00,75.00
+2025-05-01,Cocoa Powder,120,12.50,6.00
+2025-06-01,Cocoa Powder,115,12.50,6.00
+2025-07-01,Cocoa Powder,110,12.50,6.00
+2025-08-01,Cocoa Powder,105,12.50,6.00
+2025-09-01,Cocoa Powder,125,12.50,6.00
+2025-10-01,Cocoa Powder,140,12.50,6.00
+2025-11-01,Cocoa Powder,160,12.50,6.00
+2025-12-01,Cocoa Powder,200,12.50,6.00
+2026-01-01,Cocoa Powder,100,12.50,6.00
+2026-02-01,Cocoa Powder,110,12.50,6.00
+2026-03-01,Cocoa Powder,105,12.50,6.00
+2026-04-01,Cocoa Powder,115,12.50,6.00
+2025-05-01,Mango Puree,85,7.80,3.40
+2025-06-01,Mango Puree,110,7.80,3.40
+2025-07-01,Mango Puree,120,7.80,3.40
+2025-08-01,Mango Puree,105,7.80,3.40
+2025-09-01,Mango Puree,90,7.80,3.40
+2025-10-01,Mango Puree,75,7.80,3.40
+2025-11-01,Mango Puree,65,7.80,3.40
+2025-12-01,Mango Puree,80,7.80,3.40
+2026-01-01,Mango Puree,60,7.80,3.40
+2026-02-01,Mango Puree,70,7.80,3.40
+2026-03-01,Mango Puree,65,7.80,3.40
+2026-04-01,Mango Puree,80,7.80,3.40
+2025-05-01,1L Plastic Bottles,1200,0.15,0.06
+2025-06-01,1L Plastic Bottles,1300,0.15,0.06
+2025-07-01,1L Plastic Bottles,1250,0.15,0.06
+2025-08-01,1L Plastic Bottles,1150,0.15,0.06
+2025-09-01,1L Plastic Bottles,1100,0.15,0.06
+2025-10-01,1L Plastic Bottles,1150,0.15,0.06
+2025-11-01,1L Plastic Bottles,1200,0.15,0.06
+2025-12-01,1L Plastic Bottles,1500,0.15,0.06
+2026-01-01,1L Plastic Bottles,1000,0.15,0.06
+2026-02-01,1L Plastic Bottles,1100,0.15,0.06
+2026-03-01,1L Plastic Bottles,950,0.15,0.06
+2026-04-01,1L Plastic Bottles,1200,0.15,0.06
+2025-05-01,Bleach Sanitizer,150,12.00,4.50
+2025-06-01,Bleach Sanitizer,160,12.00,4.50
+2025-07-01,Bleach Sanitizer,155,12.00,4.50
+2025-08-01,Bleach Sanitizer,145,12.00,4.50
+2025-09-01,Bleach Sanitizer,170,12.00,4.50
+2025-10-01,Bleach Sanitizer,180,12.00,4.50
+2025-11-01,Bleach Sanitizer,210,12.00,4.50
+2025-12-01,Bleach Sanitizer,250,12.00,4.50
+2026-01-01,Bleach Sanitizer,200,12.00,4.50
+2026-02-01,Bleach Sanitizer,150,12.00,4.50
+2026-03-01,Bleach Sanitizer,100,12.00,4.50
+2026-04-01,Bleach Sanitizer,50,12.00,4.50
