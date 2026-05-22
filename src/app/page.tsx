@@ -77,6 +77,7 @@ const PENDING_ORDERS = [
 
 export default function ProcurementCopilot() {
   const [activeTab, setActiveTab] = useState<'entry' | 'database' | 'forecast' | 'behavior' | 'profit'>('entry');
+  const [activeInnerTab, setActiveInnerTab] = useState<'contents' | 'logistics' | 'accounting' | 'attachments'>('contents');
   
   // UI Filters
   const [monthsFilter, setMonthsFilter] = useState<number>(3);
@@ -164,7 +165,7 @@ export default function ProcurementCopilot() {
     <div className="flex h-screen bg-slate-950 text-slate-200 font-sans overflow-hidden">
       
       {/* SIDEBAR NAVIGATION */}
-      <aside className="w-72 bg-slate-900 border-r border-slate-800 flex flex-col z-10 shadow-2xl shrink-0">
+      <aside className="w-72 bg-slate-900 border-r border-slate-800 flex flex-col z-10 shadow-2xl shrink-0 overflow-y-auto custom-scrollbar">
         <div className="p-8 border-b border-slate-800">
            <div className="flex items-center gap-4">
                <div className="bg-blue-600 p-2.5 rounded-xl shadow-[0_0_20px_rgba(37,99,235,0.4)]">
@@ -177,7 +178,7 @@ export default function ProcurementCopilot() {
         </div>
         
         <nav className="p-6 flex-1 space-y-4">
-            <p className="text-xs font-bold text-slate-500 uppercase tracking-widest pl-2 mb-2">Manager Menu</p>
+            <p className="text-xs font-bold text-slate-500 uppercase tracking-widest pl-2 mb-2">Main Menu</p>
             
             <button 
                 onClick={() => setActiveTab('entry')} 
@@ -262,7 +263,7 @@ export default function ProcurementCopilot() {
                 <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 max-w-5xl mx-auto">
                     <header className="mb-8 p-10 bg-slate-900 border border-slate-800 rounded-[45px] shadow-2xl relative overflow-hidden group">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/5 blur-[100px] -z-10 group-hover:bg-blue-600/10 transition-all"></div>
-                        <h2 className="text-5xl font-black text-white tracking-tighter mb-4 italic">Pending Requisitions Queue</h2>
+                        <h2 className="text-5xl font-black text-white tracking-tighter mb-4 italic">Pending Requisitions</h2>
                         <p className="text-slate-400 font-medium max-w-2xl leading-relaxed text-sm">
                             Review draft procurement documents submitted by staff members. 
                             The AI Copilot has pre-verified the quantities against historical behavior and <strong>Economic Order Quantity (EOQ)</strong> benchmarks.
@@ -443,13 +444,14 @@ export default function ProcurementCopilot() {
                             
                             {/* Modern Pills Tabs */}
                             <div className="flex bg-slate-900/50 border-b border-slate-800 p-3 gap-2">
-                                <div className="px-5 py-1.5 bg-slate-800 text-blue-400 rounded-lg text-xs font-bold cursor-default shadow-sm border border-slate-700">Contents</div>
-                                <div className="px-5 py-1.5 text-slate-500 rounded-lg text-xs font-bold hover:bg-slate-800/80 hover:text-slate-300 cursor-pointer transition-colors">Logistics</div>
-                                <div className="px-5 py-1.5 text-slate-500 rounded-lg text-xs font-bold hover:bg-slate-800/80 hover:text-slate-300 cursor-pointer transition-colors">Accounting</div>
-                                <div className="px-5 py-1.5 text-slate-500 rounded-lg text-xs font-bold hover:bg-slate-800/80 hover:text-slate-300 cursor-pointer transition-colors">Attachments</div>
+                                <div onClick={() => setActiveInnerTab('contents')} className={`px-5 py-1.5 rounded-lg text-xs font-bold cursor-pointer transition-colors ${activeInnerTab === 'contents' ? 'bg-slate-800 text-blue-400 shadow-sm border border-slate-700' : 'text-slate-500 hover:bg-slate-800/80 hover:text-slate-300'}`}>Contents</div>
+                                <div onClick={() => setActiveInnerTab('logistics')} className={`px-5 py-1.5 rounded-lg text-xs font-bold cursor-pointer transition-colors ${activeInnerTab === 'logistics' ? 'bg-slate-800 text-blue-400 shadow-sm border border-slate-700' : 'text-slate-500 hover:bg-slate-800/80 hover:text-slate-300'}`}>Logistics</div>
+                                <div onClick={() => setActiveInnerTab('accounting')} className={`px-5 py-1.5 rounded-lg text-xs font-bold cursor-pointer transition-colors ${activeInnerTab === 'accounting' ? 'bg-slate-800 text-blue-400 shadow-sm border border-slate-700' : 'text-slate-500 hover:bg-slate-800/80 hover:text-slate-300'}`}>Accounting</div>
+                                <div onClick={() => setActiveInnerTab('attachments')} className={`px-5 py-1.5 rounded-lg text-xs font-bold cursor-pointer transition-colors ${activeInnerTab === 'attachments' ? 'bg-slate-800 text-blue-400 shadow-sm border border-slate-700' : 'text-slate-500 hover:bg-slate-800/80 hover:text-slate-300'}`}>Attachments</div>
                             </div>
 
-                            <div className="overflow-x-auto w-full p-6">
+                            {activeInnerTab === 'contents' && (
+                                <div className="overflow-x-auto w-full p-6">
                                 <div className="rounded-xl border border-slate-800 overflow-hidden bg-slate-950/80">
                                     <table className="w-full text-left text-sm text-slate-300">
                                         <thead className="bg-slate-900/90 text-xs uppercase font-extrabold tracking-wider text-slate-500 border-b border-slate-800">
@@ -567,6 +569,146 @@ export default function ProcurementCopilot() {
                                     })()}
                                 </div>
                             </div>
+                            )}
+
+                            {activeInnerTab === 'logistics' && (
+                                <div className="p-6 space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-300">
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                        <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-inner">
+                                            <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Delivery Date / Lead Time</h4>
+                                            <p className="text-sm font-black text-white">Expected: Next Thursday</p>
+                                        </div>
+                                        <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-inner">
+                                            <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Warehouse Destination</h4>
+                                            <p className="text-sm font-black text-white">Zone A - Cold Storage</p>
+                                        </div>
+                                        <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-inner">
+                                            <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Shipping Terms</h4>
+                                            <p className="text-sm font-black text-white">FOB Destination</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="bg-rose-500/10 border border-rose-500/30 rounded-xl p-5 flex items-start gap-4 shadow-lg shadow-rose-900/20">
+                                        <AlertTriangle className="w-6 h-6 text-rose-400 shrink-0 mt-0.5" />
+                                        <div>
+                                            <h4 className="text-xs font-black text-rose-400 uppercase tracking-widest mb-1">AI Capacity Warning</h4>
+                                            <p className="text-sm font-medium text-rose-200/80">
+                                                Cold Storage is currently at <strong>90% capacity</strong>. Approving this requisition may result in severe storage overflow. Please coordinate with the logistics supervisor before final approval.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+
+                            {activeInnerTab === 'accounting' && (
+                                <div className="p-6 space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-300">
+                                    {(() => {
+                                        const subtotal = activePO.lines.reduce((acc, li) => acc + (li.qty * (UNIT_PRICES[li.name] || 0)), 0);
+                                        const tax = subtotal * 0.08;
+                                        const total = subtotal + tax;
+                                        const budgetLimit = 15000;
+                                        const budgetUsed = 8500;
+                                        const budgetRemaining = budgetLimit - budgetUsed;
+                                        const isOverBudget = total > budgetRemaining;
+
+                                        return (
+                                            <>
+                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                                    <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-inner flex flex-col justify-between">
+                                                        <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4 border-b border-slate-800 pb-2">Financial Breakdown</h4>
+                                                        <div className="space-y-3 mb-6">
+                                                            <div className="flex justify-between items-center text-sm font-medium text-slate-400">
+                                                                <span>Subtotal</span>
+                                                                <span className="text-slate-200">${subtotal.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+                                                            </div>
+                                                            <div className="flex justify-between items-center text-sm font-medium text-slate-400">
+                                                                <span>Estimated Tax (8%)</span>
+                                                                <span className="text-slate-200">${tax.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+                                                            </div>
+                                                            <div className="flex justify-between items-center text-lg font-black text-white pt-2 border-t border-slate-800">
+                                                                <span>Total Estimated Cost</span>
+                                                                <span className="text-emerald-400">${total.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div className="bg-slate-950 p-3 rounded-lg border border-slate-800 flex justify-between items-center">
+                                                            <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Payment Terms</span>
+                                                            <span className="text-xs font-bold text-white">Net 30 Days</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-inner flex flex-col">
+                                                        <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4 border-b border-slate-800 pb-2">Department Budget Impact</h4>
+                                                        <div className="flex-1 flex flex-col justify-center gap-4">
+                                                            <div>
+                                                                <div className="flex justify-between text-xs font-bold mb-2">
+                                                                    <span className="text-slate-400">Q2 Budget: <span className="text-white">${budgetLimit.toLocaleString()}</span></span>
+                                                                    <span className={isOverBudget ? 'text-rose-400' : 'text-slate-400'}>
+                                                                        Remaining: <span className="text-white">${budgetRemaining.toLocaleString()}</span>
+                                                                    </span>
+                                                                </div>
+                                                                <div className="w-full bg-slate-950 rounded-full h-3 border border-slate-800 overflow-hidden flex">
+                                                                    <div className="bg-slate-600 h-full" style={{ width: `${(budgetUsed / budgetLimit) * 100}%` }}></div>
+                                                                    <div className={`${isOverBudget ? 'bg-rose-500' : 'bg-blue-500'} h-full transition-all duration-1000`} style={{ width: `${(total / budgetLimit) * 100}%` }}></div>
+                                                                </div>
+                                                            </div>
+
+                                                            {isOverBudget ? (
+                                                                <div className="bg-rose-500/10 border border-rose-500/30 rounded-lg p-3 flex items-start gap-3 mt-2">
+                                                                    <AlertTriangle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                                                                    <p className="text-xs font-medium text-rose-200/80 leading-tight">
+                                                                        This order exceeds the remaining Q2 budget allocation by <strong>${(total - budgetRemaining).toLocaleString(undefined, {minimumFractionDigits: 2})}</strong>. Approval requires override.
+                                                                    </p>
+                                                                </div>
+                                                            ) : (
+                                                                <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-3 flex items-start gap-3 mt-2">
+                                                                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                                                                    <p className="text-xs font-medium text-emerald-200/80 leading-tight">
+                                                                        This order fits within the current budget allocation. No overrides required.
+                                                                    </p>
+                                                                </div>
+                                                            )}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </>
+                                        );
+                                    })()}
+                                </div>
+                            )}
+
+                            {activeInnerTab === 'attachments' && (
+                                <div className="p-6 space-y-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
+                                    <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4 border-b border-slate-800 pb-2">Reference Documents</h4>
+                                    
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 flex items-center justify-between group hover:border-slate-700 transition-colors cursor-pointer">
+                                            <div className="flex items-center gap-4">
+                                                <div className="p-3 bg-slate-950 rounded-lg group-hover:bg-blue-500/10 transition-colors">
+                                                    <FileSearch className="w-5 h-5 text-slate-500 group-hover:text-blue-400" />
+                                                </div>
+                                                <div>
+                                                    <p className="text-sm font-bold text-slate-200">Dummy_Purchase_Order.pdf</p>
+                                                    <p className="text-[10px] font-medium text-slate-500 uppercase">Vendor Request • 1.2 MB</p>
+                                                </div>
+                                            </div>
+                                            <button className="text-xs font-bold text-blue-400 hover:text-blue-300 transition-colors px-3">View</button>
+                                        </div>
+
+                                        <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 flex items-center justify-between group hover:border-slate-700 transition-colors cursor-pointer">
+                                            <div className="flex items-center gap-4">
+                                                <div className="p-3 bg-slate-950 rounded-lg group-hover:bg-emerald-500/10 transition-colors">
+                                                    <FileSearch className="w-5 h-5 text-slate-500 group-hover:text-emerald-400" />
+                                                </div>
+                                                <div>
+                                                    <p className="text-sm font-bold text-slate-200">Vendor_Quote_Q2.pdf</p>
+                                                    <p className="text-[10px] font-medium text-slate-500 uppercase">Quotation • 850 KB</p>
+                                                </div>
+                                            </div>
+                                            <button className="text-xs font-bold text-blue-400 hover:text-blue-300 transition-colors px-3">View</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
                             
                             {/* REMARKS SECTION */}
                              <div className="px-6 mb-10 pb-10 border-b border-slate-800">
